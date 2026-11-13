@@ -1,0 +1,137 @@
+# Normalize cross-platform line endings
+* text=auto
+
+# Define macros for LFS and Unity YAML handling
+[attr]lfs filter=lfs diff=lfs merge=lfs -text
+[attr]unity-yaml merge=unityyamlmerge eol=lf
+[attr]unity-json eol=lf
+
+# ------------------------------------------------------------------------------
+# 1. Unity Code & Text Assets (Handled by Git)
+# ------------------------------------------------------------------------------
+*.cs            text diff=csharp
+*.cginc         text
+*.compute       text
+*.hlsl          text
+*.raytrace      text
+*.shader        text
+
+# Unity JSON / Config
+*.asmdef        unity-json
+*.asmref        unity-json
+*.index         unity-json
+*.inputactions  unity-json
+*.json          text
+*.shadergraph   unity-json
+*.shadersubgraph unity-json
+
+# Unity UI Toolkit
+*.tss           text diff=css
+*.uss           text diff=css
+*.uxml          text xml
+
+# Unity YAML Assets
+*.anim          unity-yaml
+*.asset         unity-yaml
+*.brush         unity-yaml
+*.controller    unity-yaml
+*.flare         unity-yaml
+*.fontsettings  unity-yaml
+*.giparams      unity-yaml
+*.guiskin       unity-yaml
+*.lighting      unity-yaml
+*.mask          unity-yaml
+*.mat           unity-yaml
+*.meta          unity-yaml
+*.mixer         unity-yaml
+*.overrideController unity-yaml
+*.playable      unity-yaml
+*.prefab        unity-yaml
+*.preset        unity-yaml
+*.renderTexture unity-yaml
+*.scenetemplate unity-yaml
+*.shadervariants unity-yaml
+*.signal        unity-yaml
+*.spriteatlas   unity-yaml
+*.spriteatlasv2 unity-yaml
+*.terrainlayer  unity-yaml
+*.unity         unity-yaml
+*.physicMaterial    unity-yaml
+*.physicsMaterial2D unity-yaml
+
+# ------------------------------------------------------------------------------
+# 2. Binary Assets (Handled by Git LFS)
+# ------------------------------------------------------------------------------
+
+# Unity Packages & Bundles
+*.bundle        lfs
+*.unitypackage  lfs
+
+# 3D Models & Animations
+*.3dm           lfs
+*.3ds           lfs
+*.blend         lfs
+*.blend1        lfs
+*.c4d           lfs
+*.dae           lfs
+*.dxf           lfs
+*.fbx           lfs
+*.max           lfs
+*.mb            lfs
+*.obj           lfs
+*.ma            lfs
+*.stl           lfs
+*.ztl           lfs
+
+# Audio
+*.aif           lfs
+*.aiff          lfs
+*.it            lfs
+*.mod           lfs
+*.mp3           lfs
+*.ogg           lfs
+*.s3m           lfs
+*.wav           lfs
+*.xm            lfs
+
+# Textures & Images
+*.bmp           lfs
+*.exr           lfs
+*.gif           lfs
+*.hdr           lfs
+*.iff           lfs
+*.jpeg          lfs
+*.jpg           lfs
+*.pct           lfs
+*.pcx           lfs
+*.pic           lfs
+*.png           lfs
+*.psd           lfs
+*.tga           lfs
+*.tif           lfs
+*.tiff          lfs
+
+# Video
+*.asf           lfs
+*.avi           lfs
+*.m4v           lfs
+*.mov           lfs
+*.mp4           lfs
+*.mpeg          lfs
+*.ogv           lfs
+*.qt            lfs
+*.webm          lfs
+*.wmv           lfs
+
+# Archives & Native Binaries
+*.zip           lfs
+*.rar           lfs
+*.7z            lfs
+*.tar           lfs
+*.tar.gz        lfs
+*.pdf           lfs
+*.dll           lfs
+*.so            lfs
+*.dylib         lfs
+*.aar           lfs
+*.jar           lfs
