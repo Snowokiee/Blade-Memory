@@ -38,6 +38,7 @@ public static class BuildScript
             scenes = new[] { DefaultScenePath },
             locationPathName = outputPath,
             target = BuildTarget.Android,
+            targetGroup = BuildTargetGroup.Android,
             options = BuildOptions.None
         };
 
