@@ -13,9 +13,9 @@ public static class BuildScript
     private const string DefaultOutputPath = "build/Android/BladeMemory.apk";
     private const string AndroidPackageName = "com.blademory.game";
 
-    public static void BuildAndroid()
+    public static void PrepareForCloudBuild()
     {
-        Debug.Log("[BuildScript] Starting Android APK build process...");
+        Debug.Log("[BuildScript] Starting CloudBuild preparation...");
 
         EnsureSceneExists();
 
@@ -25,6 +25,16 @@ public static class BuildScript
         PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
         PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
         EditorUserBuildSettings.buildAppBundle = false;
+
+        AssetDatabase.SaveAssets();
+        Debug.Log("[BuildScript] PrepareForCloudBuild completed successfully.");
+    }
+
+    public static void BuildAndroid()
+    {
+        Debug.Log("[BuildScript] Starting Android APK build process...");
+
+        PrepareForCloudBuild();
 
         string outputPath = GetBuildPath();
         string outputDir = Path.GetDirectoryName(outputPath);
